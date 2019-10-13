@@ -1,0 +1,15 @@
+.info-container {
+    margin-top: 1em;
+}
+
+div label.form-check-label {
+    font-weight: 1;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.warning-sub {
+    color: red;
+}
