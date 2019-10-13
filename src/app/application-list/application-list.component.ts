@@ -21,7 +21,8 @@ export class ApplicationListComponent implements OnInit {
   }
 
   addApplication() {
-    let emptyApplication = new Application("","",null,null,"phone","",null,"","",false);
+    //stub application
+    let emptyApplication = new Application("", "", null, null, "phone", "", null, "", "", false);
     this.applicationService.applicationSelected.emit(emptyApplication);
   }
 

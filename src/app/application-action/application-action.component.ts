@@ -20,12 +20,12 @@ export class ApplicationActionComponent implements OnInit, OnDestroy {
     this.action = "none";
     this.sub = this.applicationService.applicationSelected.subscribe(application => {
       this.application = application;
-      
-        if (application.age) {
-          this.action = "view";
-        } else {
-          this.action = "create";
-        }
+
+      if (application.age) {
+        this.action = "view";
+      } else {
+        this.action = "create";
+      }
     });
   }
 
@@ -34,11 +34,7 @@ export class ApplicationActionComponent implements OnInit, OnDestroy {
   }
 
   cancel() {
-    if(this.action == "create") {
-      this.action = "none"
-    } else {
-      this.action = "view";
-    }
+    this.action = this.action == "create" ? "none" : "view";
   }
 
   delete() {
@@ -61,7 +57,7 @@ export class ApplicationActionComponent implements OnInit, OnDestroy {
       formValue.studyFromHome
     )
 
-    if(this.action == "edit") {
+    if (this.action == "edit") {
       let index = this.applicationService.applications.indexOf(this.application);
       this.applicationService.updateApplication(index, newApplication);
     } else {
